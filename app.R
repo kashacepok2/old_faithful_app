@@ -10,20 +10,18 @@ ui <- fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
+      sliderInput(inputId = "eruptionLength",
+                  label = "Length of Eruption (minutes):",
+                  min = 0,
+                  max = 10,
+                  value = c(3, 5),
+                  step = 0.5),
       sliderInput(inputId = "bins",
                   label = "Number of bins:",
                   min = 1,
                   max = 50,
                   value = 30),
-      # ----
-      # ADD THIS - double ended range selector
-      # ----
-      sliderInput(inputId = "eruptionLength",
-                  label = "Eruption length (secs):",
-                  min = 0,
-                  max = 10,
-                  value = c(1, 5),
-                  step = 0.25),
+      
     ),
     
     # Show a plot of the generated distribution
